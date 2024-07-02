@@ -1,6 +1,6 @@
 // SOLUCION
-const { check } = require('express-validator')
-const { RestaurantCategory } = require('../../models')
+import { check } from 'express-validator'
+import { RestaurantCategory } from '../../models/models.js'
 
 const checkRestaurantCategoryNotExists = async (value, { req }) => {
   try {
@@ -17,9 +17,9 @@ const checkRestaurantCategoryNotExists = async (value, { req }) => {
   }
 }
 
-module.exports = {
-  create: [
-    check('name').exists().isString().isLength({ min: 1, max: 50 }).trim(),
-    check('name').custom(checkRestaurantCategoryNotExists)
-  ]
-}
+const create = [
+  check('name').exists().isString().isLength({ min: 1, max: 50 }).trim(),
+  check('name').custom(checkRestaurantCategoryNotExists)
+]
+
+export { create }

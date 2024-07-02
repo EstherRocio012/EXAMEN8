@@ -1,3 +1,4 @@
+'use strict'
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('RestaurantCategories', {
@@ -10,7 +11,7 @@ module.exports = {
       name: {
         allowNull: false,
         type: Sequelize.STRING,
-        // Solution
+        // SOLUCION
         unique: true
       },
       createdAt: {
