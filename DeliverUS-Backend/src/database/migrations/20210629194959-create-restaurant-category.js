@@ -9,7 +9,9 @@ module.exports = {
       },
       name: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        // Solution
+        unique: true
       },
       createdAt: {
         allowNull: false,
